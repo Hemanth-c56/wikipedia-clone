@@ -1,0 +1,267 @@
+img{
+    height: 100%;
+    width: 100%;
+}
+.view-body {
+  padding: 0px 200px;
+  margin-top: 3rem;
+}
+.first-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.first-container > h2 {
+  font-family: monospace;
+}
+.second-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+  gap: 20px;
+}
+.second-mini{
+  display: flex;
+  gap: 20px;
+}
+.matter-container {
+  display: flex;
+  gap: 1.5rem;
+}
+.matter-left {
+  flex: 5;
+  /* border: 1px solid red; */
+  padding: 5px 5px;
+}
+.matter-right {
+  flex: 2;
+  /* border: 1px solid blue; */
+  padding: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+.cursive {
+  font-family: cursive;
+}
+
+.initial {
+  font-family: initial;
+}
+
+.san-serif {
+  font-family: sans-serif;
+}
+
+.fantasy {
+  font-family: fantasy;
+}
+
+.red {
+  color: red;
+}
+.white {
+  color: white;
+}
+
+.blue {
+  color: blue;
+}
+
+.green {
+  color: green;
+}
+.yellow {
+  color: yellow;
+}
+.gold {
+  color: gold;
+}
+.orange {
+  color: orange;
+}
+.cyan {
+  color: cyan;
+}
+.pink {
+  color: pink;
+}
+.violet {
+  color: violet;
+}
+.black {
+  color: black;
+}
+
+.fs-10 {
+  font-size: 10px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+.fs-20 {
+  font-size: 20px;
+}
+
+.fs-22 {
+  font-size: 22px;
+}
+
+.fs-24 {
+  font-size: 24px;
+}
+
+.fs-26 {
+  font-size: 26px;
+}
+
+.fs-28 {
+  font-size: 28px;
+}
+
+.fs-30 {
+  font-size: 30px;
+}
+
+.fs-32 {
+  font-size: 32px;
+}
+
+.fs-34 {
+  font-size: 34px;
+}
+
+.fs-36 {
+  font-size: 36px;
+}
+
+.fs-38 {
+  font-size: 38px;
+}
+
+.fs-40 {
+  font-size: 40px;
+}
+
+.fs-42 {
+  font-size: 42px;
+}
+
+.fs-44 {
+  font-size: 44px;
+}
+
+.fs-46 {
+  font-size: 46px;
+}
+
+.fs-48 {
+  font-size: 48px;
+}
+
+.fs-50 {
+  font-size: 50px;
+}
+
+.fs-52 {
+  font-size: 52px;
+}
+
+.fs-54 {
+  font-size: 54px;
+}
+
+.fs-56 {
+  font-size: 56px;
+}
+
+.fs-58 {
+  font-size: 58px;
+}
+
+.fs-60 {
+  font-size: 60px;
+}
+
+.fs-62 {
+  font-size: 62px;
+}
+
+.fs-64 {
+  font-size: 64px;
+}
+.img-div{
+  margin-top: 20px;
+}
+.prnt-btn{
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  background-color: #F8F9FA;
+  border: none;
+  cursor: pointer;
+  border-radius: 15%;
+}
+.prnt-btn:hover{
+  background-color: #D3D4D5;
+}
+
+@media (max-width:1100px){
+  .view-body{
+    padding: 0 100px;
+  }
+}
+
+@media (max-width:900px){
+  .view-body{
+    padding: 0 50px;
+  }
+}
+
+@media (max-width:750px){
+  .view-body{
+    padding: 0 10px;
+  }
+  .matter-container{
+    flex-direction: column;
+  }
+  .size-c {
+    width: 50px;
+  }
+  .wiki-c{
+    width: 125px;
+  }
+  .navbar-image-text{
+    gap: 0.5rem;
+  }
+}
+
+.trans{
+  width: 31px;
+}
+
+@media (max-width:663px){
+  .second-container{
+    flex-direction: column;
+  }
+}

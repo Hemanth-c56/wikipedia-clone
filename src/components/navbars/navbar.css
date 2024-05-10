@@ -1,0 +1,14 @@
+.navbar-image-text{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.wiki-c{
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.size-c{
+    width: 70px;
+}

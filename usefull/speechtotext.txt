@@ -1,0 +1,100 @@
+import React, { useState, useRef } from "react";
+import "./navbar.css";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import microPhone from "./microphone.png";
+import InputGroup from "react-bootstrap/InputGroup";
+
+function NavbarComponent(props) {
+  const [input, setInput] = useState("");
+  const recognition = useRef(null);
+
+  const handleSpeechRecognition = () => {
+    if (!recognition.current) {
+      recognition.current = new window.webkitSpeechRecognition();
+      recognition.current.continuous = false;
+      recognition.current.interimResults = false;
+      recognition.current.lang = "en-US";
+
+      recognition.current.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setInput(transcript);
+        props.toHandleSearch(transcript);
+      };
+
+      recognition.current.onerror = (event) => {
+        console.error("Speech recognition error:", event.error);
+      };
+    }
+
+    recognition.current.start();
+  };
+
+  const stopSpeechRecognition = () => {
+    if (recognition.current) {
+      recognition.current.stop();
+    }
+  };
+
+  const handleSearch = () => {
+    stopSpeechRecognition();
+    props.toHandleSearch(input);
+    setInput("");
+  };
+
+  return (
+    <div>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container fluid>
+          <Navbar.Brand href="#">
+            <div className="navbar-image-text">
+              <div>
+                <img
+                  className="size-c"
+                  src="https://en.wikipedia.org/static/images/icons/wikipedia.png"
+                  alt="hi"
+                />
+              </div>
+              <div className="wiki-c">
+                <img src="https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-wordmark-en.svg" />
+                <img src="https://en.wikipedia.org/static/images/mobile/copyright/wikipedia-tagline-en.svg"></img>
+              </div>
+            </div>
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="navbarScroll" />
+          <Navbar.Collapse id="navbarScroll">
+            <Nav
+              className="me-auto my-2 my-lg-0"
+              style={{ maxHeight: "100px" }}
+              navbarScroll
+            ></Nav>
+            <Form className="d-flex">
+              <InputGroup.Text
+                id="basic-addon1"
+                onClick={handleSpeechRecognition}
+              >
+                <img style={{ width: "20px" }} src={microPhone} alt="" />
+              </InputGroup.Text>
+              <Form.Control
+                type="input"
+                placeholder="Search"
+                className="me-2"
+                aria-label="Search"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+              />
+              <Button variant="outline-success" onClick={handleSearch}>
+                Search
+              </Button>
+            </Form>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </div>
+  );
+}
+
+export default NavbarComponent;
